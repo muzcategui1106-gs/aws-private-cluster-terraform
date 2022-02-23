@@ -1,0 +1,5 @@
+*install-config*.yaml
+pull-secret*.json
+.terraform
+*terraform*
+ccoctl
