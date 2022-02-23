@@ -1,0 +1,1 @@
+this is a bastion host for the purposes of a POC at home. This bastion host in not preproduction or production grade on real AWS accounts
