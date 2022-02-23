@@ -3,3 +3,5 @@ pull-secret*.json
 .terraform
 *terraform*
 ccoctl
+openshift-install.tar.gz
+installation-binaries.tar.gz
