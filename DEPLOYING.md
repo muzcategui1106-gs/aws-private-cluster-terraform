@@ -43,3 +43,11 @@ Run the following
 terraform destroy --target=module.bootstrap
 terraform apply --target=module.worker
 ```
+
+Manually approve CSRs for the workers
+Wait for the loadbalancer for the apps service to appear in AWS
+
+Run the following
+```
+terraform apply --target=module.finalizer
+```

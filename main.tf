@@ -101,3 +101,10 @@ module worker {
   worker_ignition = "${module.installer.worker_ignition}"
   infra_name = "${module.installer.infra_name}"
 }
+
+module finalizer {
+  source = "./modules/finalizer"
+
+  hosted_zone_id = "${module.setup.hosted_zone_id}"
+  infra_name = "${module.installer.infra_name}"
+}
