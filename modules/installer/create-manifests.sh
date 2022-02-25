@@ -20,6 +20,7 @@ ls -ltr $base_dir/
 echo "----------------------------------------------------------------------------"
 
 echo "---------------creating creds using ccoctl--------------"
+$base_dir/ccoctl aws delete --name=private-cluster --region=us-east-1
 $base_dir/ccoctl aws create-all --name=private-cluster --region=us-east-1 --credentials-requests-dir=$creds_dir --output-dir=$generated_creds_dir
 if [ $? -ne 0 ]; then
     exit 1

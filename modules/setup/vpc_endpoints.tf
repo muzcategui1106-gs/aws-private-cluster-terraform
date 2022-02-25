@@ -2,6 +2,7 @@ resource "aws_vpc_endpoint" "ec2_private_subnets" {
   vpc_id       = aws_vpc.openshift.id
   service_name = "com.amazonaws.us-east-1.ec2"
   vpc_endpoint_type = "Interface"
+  private_dns_enabled = true
   security_group_ids = [aws_security_group.allow_all_traffic.id]
   subnet_ids = [for s in aws_subnet.vpc_endpoints_subnet : "${s.id}"]
   tags = {
@@ -29,6 +30,19 @@ resource "aws_vpc_endpoint" "elasticloadbalancing_private_subnets" {
   tags = {
       "purpose": "openshift"
       "Name": "elasticloadbalancing-vpc-endpoint"
+  }
+}
+
+resource "aws_vpc_endpoint" "sts_private_subnets" {
+  vpc_id       = aws_vpc.openshift.id
+  service_name = "com.amazonaws.us-east-1.sts"
+  vpc_endpoint_type = "Interface"
+  private_dns_enabled = true
+  security_group_ids = [aws_security_group.allow_all_traffic.id]
+  subnet_ids = [for s in aws_subnet.vpc_endpoints_subnet : "${s.id}"]
+  tags = {
+      "purpose": "openshift"
+      "Name": "sts-vpc-endpoint"
   }
 }
 

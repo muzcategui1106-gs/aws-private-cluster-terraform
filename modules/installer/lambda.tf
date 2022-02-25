@@ -139,7 +139,7 @@ resource "aws_lambda_function" "installer-resources-generator" {
 
     environment {
     variables = {
-      NO_PROXY = "s3.amazonaws.com",
+      NO_PROXY = "vpce.amazonaws.com,public-cluster.uzcatm-skylab.com,s3.amazonaws.com,private-cluster.private-zone.skylab.com,sts.us-east-1.amazonaws.com,ec2.us-east-1.amazonaws.com,elasticloadbalancing.us-east-1.amazonaws.com",
       https_proxy = "http://OutboundProxyLoadBalancer-8372e582731e79fa.elb.us-east-1.amazonaws.com:3128"
     }
   }

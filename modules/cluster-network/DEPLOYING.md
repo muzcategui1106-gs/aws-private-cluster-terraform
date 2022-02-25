@@ -1,5 +1,6 @@
 Subnets:
     3 Private subnets in 3 different AZ. Each subnets have the same ACLS
+        * NOTE: bad idea to use prefixlist for ACL network rules. This changes and causes problems
 
 Route Tables
     private subnets. Route table to route locally within the VPC
