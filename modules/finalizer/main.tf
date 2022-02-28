@@ -3,7 +3,7 @@ data "aws_route53_zone" "hosted_zone" {
 }
 
 data "aws_elb" "apps" {
-    name = "a09e3a807a0594fef8792e3297c33b67"
+    name = "a2fc99f18be324ca7a74912429f855cb"
 }
 
 resource "aws_route53_record" "apps-record" {
